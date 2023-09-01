@@ -1,11 +1,13 @@
 import { store } from '../../app/store'
-import { userApiSlice } from '../users/userApiSlice';
+
+import { postApiSlice } from '../posts/postApiSlice';
 import { useEffect } from 'react';
 import { Outlet } from 'react-router-dom';
 
 const Prefetch = () => {
     useEffect(() => {
-        store.dispatch(userApiSlice.util.prefetch('getUsers', 'UserProfile', { force: true }))
+        store.dispatch(postApiSlice.util.prefetch('getAllPosts', 'ViewPost', { force: true }))
+        store.dispatch(postApiSlice.util.prefetch('getAllPosts', 'createPostPage', { force: true }))
     }, [])
 
     return <Outlet />

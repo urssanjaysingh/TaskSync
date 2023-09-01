@@ -9,13 +9,10 @@ import DashLayout from './components/DashLayout'
 import Welcome from './features/auth/Welcome'
 import ProfileCompletionPage from './features/users/ProfileCompletionPage'
 import UserProfile from './features/users/UserProfile'
-import PostList from './features/posts/PostList'
-import PostPage from './features/posts/PostPage'
-import CreatePostForm from './features/posts/CreatePostForm'
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin'
-import UserPostList from './features/users/UserPostList'
-import UserPostPage from './features/users/UserPostPage'
+import CreatePostPage from './features/posts/createPostPage';
+import ViewPost from './features/posts/ViewPost'
 
 function App() {
   useTitle('FlexiBlog')
@@ -29,22 +26,11 @@ function App() {
 
         <Route path="login" element={<Login />} />
 
-        <Route path="posts" element={<PostList />} />
-        <Route path="/posts/:postId" element={<PostPage />} />
-
         <Route element={<PersistLogin />}>
           <Route element={<Prefetch />}>
             <Route path="dash" element={<DashLayout />}>
 
               <Route index element={<Welcome />} />
-
-              <Route path="post/user/:userId">
-                <Route index element={<UserPostList />} />
-              </Route>
-
-              <Route path="post/user/:userId/:postId">
-                <Route index element={<UserPostPage />} />
-              </Route>
 
               <Route path="users">
                 <Route index element={<UserProfile />} />
@@ -54,11 +40,10 @@ function App() {
                 <Route index element={<ProfileCompletionPage />} />
               </Route>
 
-              <Route path="post/create">
-                <Route index element={<CreatePostForm />} />
-              </Route>
+              <Route path="create-post" element={<CreatePostPage />} />
+              <Route path="post/all" element={<ViewPost />} />
 
-            </Route>{/* End Dash */}
+            </Route>
           </Route>
         </Route>
 

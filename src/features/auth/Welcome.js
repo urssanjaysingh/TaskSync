@@ -7,7 +7,6 @@ import { faList, faUser, faEdit } from '@fortawesome/free-solid-svg-icons'; // I
 
 const Welcome = () => {
     useTitle('Welcome');
-    const userId = Cookies.get('userId');
     const username = Cookies.get('username');
 
     const date = new Date();
@@ -18,7 +17,7 @@ const Welcome = () => {
             <p>{today}</p>
             <h1>Welcome! {username}</h1>
             <p>
-                <Link to={`/dash/post/user/${userId}`} style={{ color: "#405de6" }} className="instagram-link">
+                <Link to={`post/all`} style={{ color: "#405de6" }} className="instagram-link">
                     <FontAwesomeIcon icon={faList} /> View Posts
                 </Link>
             </p>
@@ -28,7 +27,7 @@ const Welcome = () => {
                 </Link>
             </p>
             <p>
-                <Link to="/dash/post/create" style={{ color: "#405de6" }} className="instagram-link">
+                <Link to="/dash/create-post" style={{ color: "#405de6" }} className="instagram-link">
                     <FontAwesomeIcon icon={faEdit} /> Create Post
                 </Link>
             </p>

@@ -11,7 +11,7 @@ const User = ({ user }) => {
     return (
         <section className="user-profile">
             <div className="user-profile__container">
-                <h2 className="user-profile__username">{user.username}</h2>
+                <h2 className="user-profile__username comment-author">{user.username}</h2>
                 <div className="user-profile__avatar">
                     <img
                         src={user.profile.avatar}

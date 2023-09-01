@@ -4,11 +4,9 @@ import { faRightFromBracket, faHome, faUser, faEdit, faList } from "@fortawesome
 import { useNavigate, Link } from 'react-router-dom';
 import PulseLoader from 'react-spinners/PulseLoader';
 import { useSendLogoutMutation } from '../features/auth/authApiSlice';
-import Cookies from 'js-cookie';
 
 const DashHeader = () => {
-    const userId = Cookies.get('userId');
-    
+
     const navigate = useNavigate();
 
     const [sendLogout, {
@@ -35,7 +33,7 @@ const DashHeader = () => {
     );
 
     const postListButton = (
-        <Link to={`/dash/post/user/${userId}`}>
+        <Link to={`/dash/post/all`}>
             <button className="icon-button" title="View Posts">
                 <FontAwesomeIcon icon={faList} />
             </button>
@@ -51,7 +49,7 @@ const DashHeader = () => {
     );
 
     const createPostButton = (
-        <Link to="/dash/post/create">
+        <Link to="/dash/create-post">
             <button className="icon-button" title="Create Post">
                 <FontAwesomeIcon icon={faEdit} />
             </button>
