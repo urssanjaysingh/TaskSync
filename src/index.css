@@ -633,9 +633,8 @@ a:focus-visible {
 /* Assuming this is your CSS file, e.g., PostStyles.css */
 
 .post-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  list-style: none; /* Remove list bullets */
+  padding: 0; /* Remove default list padding */
 }
 
 .post {
