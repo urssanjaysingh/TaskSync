@@ -52,7 +52,7 @@ const CreatePostPage = () => {
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
                             placeholder="Write your post here"
-                            rows={10}
+                            rows={11}
                             style={{ width: "100%", maxWidth: "100%" }}
                         />
                     </div>
