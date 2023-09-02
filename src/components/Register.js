@@ -121,7 +121,7 @@ const Register = () => {
                     </nav>
                 </div>
             </header>
-            <main className="public__main">
+            <main>
                 <div className="register" style={{ width: "400px" }}>
                     {success ? (
                         <div className="text-center">
