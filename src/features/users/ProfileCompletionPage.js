@@ -50,8 +50,7 @@ const ProfileCompletionPage = () => {
             const { entities } = userProfile;
             const userId = userProfile.ids[0];
             const user = entities[userId];
-            console.log(user);
-
+            
             setFirstName(user.profile.first_name || '');
             setLastName(user.profile.last_name || '');
             setBio(user.profile.bio || '');
@@ -195,7 +194,6 @@ const ProfileCompletionPage = () => {
                                 onChange={(e) => {
                                     const newAvatar = e.target.files[0];
                                     setAvatar(newAvatar); // Update the avatar state
-                                    console.log('Selected avatar:', newAvatar);
                                 }}
                                 style={{
                                     maxWidth: "100%",

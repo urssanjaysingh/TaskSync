@@ -32,7 +32,6 @@ const ViewPost = () => {
     const [comments, setComments] = useState({});
 
     useEffect(() => {
-        console.log('Fetching all posts...');
         if (allPosts) {
             // Sort the allPosts array by created_at timestamp in descending order
             const sortedPosts = allPosts.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
@@ -43,7 +42,6 @@ const ViewPost = () => {
                 return { ...post, comments: sortedComments };
             });
 
-            console.log('Received all posts:', postsWithSortedComments);
             setUserPosts(postsWithSortedComments);
         }
     }, [allPosts]);

@@ -27,7 +27,6 @@ const ViewTask = () => {
         if (allTasks) {
             // Sort tasks by createdAt timestamp in descending order
             const sortedTasks = allTasks.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-            console.log(sortedTasks);
             setUserTasks(sortedTasks);
         }
     }, [allTasks]);
@@ -49,9 +48,7 @@ const ViewTask = () => {
     }, [allTasks]);
 
     const handleToggleStatus = async (taskId, currentStatus) => {
-        console.log('Toggling status for taskId:', taskId);
-        console.log('Current status:', currentStatus);
-
+        
         try {
             let newStatus = '';
 
@@ -75,7 +72,7 @@ const ViewTask = () => {
             const response = await toggleTaskStatus({ taskId, newStatus });
 
             // If successful, the response contains the updated task data
-            console.log('Task status toggled successfully:', response.data);
+            console.log('Task status toggled successfully:');
         } catch (error) {
             // Handle errors, e.g., network errors, validation errors, etc.
             console.error('Error toggling task status:', error);

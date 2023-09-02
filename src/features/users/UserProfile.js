@@ -27,7 +27,6 @@ const UserProfile = () => {
         const user = entities[userId];
 
         if (user) {
-            console.log(user)
             content = (
                 <User
                     user={user}
