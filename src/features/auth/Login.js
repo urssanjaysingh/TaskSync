@@ -98,6 +98,15 @@ const Login = () => {
         <section className="public">
             <header>
                 <h1><span className="nowrap">TaskSync</span></h1>
+                <nav className="dash-header__nav">
+                    <Link to="/" className="btn btn-link">
+                        <FontAwesomeIcon icon={faHome} /> Home
+                    </Link>
+                    <span className="space"></span>
+                    <Link to="/register" className="btn btn-link">
+                        <FontAwesomeIcon icon={faUserPlus} /> Sign Up
+                    </Link>
+                </nav>
             </header>
             <main className="public__main">
                 <div className="login" style={{ width: "400px" }}>
@@ -175,17 +184,6 @@ const Login = () => {
                     )}
                 </div>
             </main>
-            <footer>
-                <div className="form-button-container">
-                    <Link to="/" className="btn btn-link">
-                        <FontAwesomeIcon icon={faHome} /> Home
-                    </Link>
-                    <span className="space"></span>
-                    <Link to="/register" className="btn btn-link">
-                        <FontAwesomeIcon icon={faUserPlus} /> Sign Up
-                    </Link>
-                </div>
-            </footer>
         </section>
     );
 }

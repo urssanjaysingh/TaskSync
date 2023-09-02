@@ -110,6 +110,15 @@ const Register = () => {
         <section className="public">
             <header>
                 <h1><span className="nowrap">TaskSync</span></h1>
+                <nav className="dash-header__nav">
+                    <Link to="/" className="btn btn-link">
+                        <FontAwesomeIcon icon={faHome} /> Home
+                    </Link>
+                    <span className="space"></span>
+                    <Link to="/login" className="btn btn-link">
+                        <FontAwesomeIcon icon={faSignInAlt} /> Sign In
+                    </Link>
+                </nav>
             </header>
             <main className="public__main">
                 <div className="register" style={{ width: "400px" }}>
@@ -238,17 +247,6 @@ const Register = () => {
                     )}
                 </div>
             </main>
-            <footer>
-                <div className="form-button-container">
-                    <Link to="/" className="btn btn-link">
-                        <FontAwesomeIcon icon={faHome} /> Home
-                    </Link>
-                    <span className="space"></span>
-                    <Link to="/login" className="btn btn-link">
-                        <FontAwesomeIcon icon={faSignInAlt} /> Sign In
-                    </Link>
-                </div>
-            </footer>
         </section>
     );
 }
