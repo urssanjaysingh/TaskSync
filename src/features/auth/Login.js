@@ -96,16 +96,18 @@ const Login = () => {
 
     return (
         <section className="public">
-            <header>
-                <h1 className="dash-header__title"><span className="nowrap">TaskSync</span></h1>
-                <nav className="dash-header__nav">
-                    <Link to="/">
-                        <FontAwesomeIcon icon={faHome} /> Home
-                    </Link>
-                    <Link to="/register">
-                        <FontAwesomeIcon icon={faUserPlus} /> Sign Up
-                    </Link>
-                </nav>
+            <header className="dash-header">
+                <div className="dash-header__container">
+                    <h1 className="dash-header__title">TaskSync</h1>
+                    <nav className="dash-header__nav">
+                        <Link to="/" className="btn btn-link">
+                            <FontAwesomeIcon icon={faHome} /> Home
+                        </Link>
+                        <Link to="/register" className="btn btn-link">
+                            <FontAwesomeIcon icon={faUserPlus} /> Sign Up
+                        </Link>
+                    </nav>
+                </div>
             </header>
             <main className="public__main">
                 <div className="login" style={{ width: "400px" }}>
