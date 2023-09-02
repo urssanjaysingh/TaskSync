@@ -57,12 +57,23 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 return [{ type: 'User', id: userId }];
             },
         }),
+        getAllUsers: builder.query({
+            query: () => '/user/all', // Adjust the endpoint URL as needed
+            validateStatus: (response, result) => {
+                return response.status === 200 && !result.isError;
+            },
+            transformResponse: (responseData) => {
+                return responseData; // Assuming the response data is an array of users
+            },
+            providesTags: ['User'],
+        }),
     }),
 })
 
 export const {
     useGetUsersQuery,
     useUpdateUserMutation,
+    useGetAllUsersQuery,
 } = userApiSlice
 
 // returns the query result object

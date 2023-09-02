@@ -11,11 +11,13 @@ import ProfileCompletionPage from './features/users/ProfileCompletionPage'
 import UserProfile from './features/users/UserProfile'
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin'
-import CreatePostPage from './features/posts/createPostPage';
+import CreatePostPage from './features/posts/CreatePostPage';
 import ViewPost from './features/posts/ViewPost'
+import CreateTaskPage from './features/tasks/CreateTaskPage'
+import ViewTask from './features/tasks/ViewTask'
 
 function App() {
-  useTitle('FlexiBlog')
+  useTitle('TaskSync')
 
   return (
     <Routes>
@@ -42,6 +44,9 @@ function App() {
 
               <Route path="create-post" element={<CreatePostPage />} />
               <Route path="post/all" element={<ViewPost />} />
+
+              <Route path="create-task" element={<CreateTaskPage />} />
+              <Route path="task/all" element={<ViewTask />} />
 
             </Route>
           </Route>

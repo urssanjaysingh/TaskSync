@@ -10,8 +10,10 @@ import {
     useDeleteCommentMutation,
     useDeletePostMutation,
 } from './postApiSlice';
+import useTitle from '../../hooks/useTitle';
 
 const ViewPost = () => {
+    useTitle('All Posts')
     const userId = Cookies.get('userId');
 
     const { data: allPosts, isLoading } = useGetAllPostsQuery(null, {
@@ -32,8 +34,17 @@ const ViewPost = () => {
     useEffect(() => {
         console.log('Fetching all posts...');
         if (allPosts) {
-            console.log('Received all posts:', allPosts);
-            setUserPosts(allPosts);
+            // Sort the allPosts array by created_at timestamp in descending order
+            const sortedPosts = allPosts.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+
+            // Sort the comments for each post in sortedPosts
+            const postsWithSortedComments = sortedPosts.map((post) => {
+                const sortedComments = post.comments.slice().sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+                return { ...post, comments: sortedComments };
+            });
+
+            console.log('Received all posts:', postsWithSortedComments);
+            setUserPosts(postsWithSortedComments);
         }
     }, [allPosts]);
 
@@ -178,15 +189,17 @@ const ViewPost = () => {
                             {post.comments.map((comment) => (
                                 <div className="comment" key={comment._id}>
                                     <div className="comment-content">
-                                        <p className="comment-author">{comment.authorUsername}</p>
-                                        <p>{comment.content}</p>
+                                        <p style={{ fontSize: "12px" }} className="comment-author">{comment.authorUsername}</p>
+                                        <p style={{ fontSize: "12px" }} >{comment.content}</p>
                                     </div>
-                                    <FontAwesomeIcon
-                                        icon={faTrash}
-                                        className="delete-comment-button"
-                                        onClick={() => handleDeleteComment(post._id, comment._id)}
-                                        style={{ cursor: 'pointer' }}
-                                    />
+                                    {comment.author === userId && ( // Check if the comment belongs to the user
+                                        <FontAwesomeIcon
+                                            icon={faTrash}
+                                            className="delete-comment-button"
+                                            onClick={() => handleDeleteComment(post._id, comment._id)}
+                                            style={{ cursor: 'pointer' }}
+                                        />
+                                    )}
                                 </div>
                             ))}
                             {activePostId === post._id && (
@@ -196,14 +209,16 @@ const ViewPost = () => {
                                     onCancel={() => setActivePostId(null)}
                                 />
                             )}
-                            <div className="button-container">
-                                <button
-                                    className="delete-post-button"
-                                    onClick={() => handleDeletePost(post._id)}
-                                >
-                                    Delete Post
-                                </button>
-                            </div>
+                            {post.author === userId && ( // Check if the post belongs to the user
+                                <div className="button-container">
+                                    <button
+                                        className="delete-post-button"
+                                        onClick={() => handleDeletePost(post._id)}
+                                    >
+                                        Delete Post
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     ))}
                 </div>
@@ -222,7 +237,7 @@ const CommentForm = ({ postId, onSubmit, onCancel }) => {
     };
 
     return (
-        <div className="create-post-form" style={{ width: "400px" }}>
+        <div className="create-post-form">
             <div className="form-container">
                 <div className="mb-3">
                     <textarea
@@ -232,11 +247,12 @@ const CommentForm = ({ postId, onSubmit, onCancel }) => {
                         placeholder="Write your comment here"
                         rows="2"
                         required
+                        style={{ fontSize: "14px" }}
                     />
                 </div>
                 <div style={{ marginTop: "0px" }} className="button-container">
                     <button className="btn btn-primary btn-sm" onClick={handleSubmit}>
-                        Submit Comment
+                        Submit
                     </button>
                     <span className="space"></span>
                     <button className="btn btn-secondary btn-sm" onClick={onCancel}>Cancel</button>

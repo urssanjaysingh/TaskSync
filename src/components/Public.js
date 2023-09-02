@@ -22,10 +22,6 @@ const Public = () => {
                         <Link className="btn btn-link" to="/login">
                             <FontAwesomeIcon icon={faSignInAlt} /> Sign In
                         </Link>
-                        <span className="space"></span>
-                        <Link className="btn btn-link" to="/posts">
-                            <FontAwesomeIcon icon={faBookOpen} /> Explore Blog Posts
-                        </Link>
                     </div>
                 </div>
             </footer>

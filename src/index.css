@@ -6,8 +6,6 @@
   box-sizing: border-box;
 }
 
-/* || VARIABLES */
-
 :root {
   /* COLORS */
   --BGCOLOR: #0f172a;
@@ -85,7 +83,7 @@ body::before {
   background-position: top right;
   background-blend-mode: multiply;
   /* filter: blur(10px);  */
-  z-index: -1; 
+  z-index: -1;
 }
 
 input,
@@ -653,7 +651,7 @@ a:focus-visible {
 
 /* styles.module.css */
 .post-content {
-    margin-top: 10px; /* Adjust the margin as needed */
+  margin-top: 10px; /* Adjust the margin as needed */
 }
 
 .post-actions {
@@ -661,6 +659,7 @@ a:focus-visible {
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .post h2 {
@@ -709,18 +708,18 @@ a:focus-visible {
 }
 
 .create-post-form {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 .create-form-group {
-    margin-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .comments {
-    padding: 10px;
-    background-color: #f5f5f5;
-    border-radius: 5px;
-    margin-top: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  margin-top: 10px;
 }
 
 .comment {
@@ -728,8 +727,8 @@ a:focus-visible {
   padding: 5px 10px;
   background-color: #f5f5f5;
   border-radius: 5px;
-  margin-top: 10px;
-  margin-bottom: 5px; /* Increase the margin for more space between comments */
+  margin-top: 1px;
+  margin-bottom: 1px; /* Increase the margin for more space between comments */
 }
 
 .comment-content {
@@ -763,10 +762,10 @@ a:focus-visible {
 
 /* Add this CSS to your stylesheet */
 .btn-sm {
-    padding: 0.25rem 0.5rem; /* Adjust padding as needed */
-    font-size: 0.875rem; /* Adjust font size as needed */
-    line-height: 1.5; /* Adjust line height as needed */
-    border-radius: 0.2rem; /* Adjust border radius as needed */
+  padding: 0.25rem 0.5rem; /* Adjust padding as needed */
+  font-size: 0.875rem; /* Adjust font size as needed */
+  line-height: 1.5; /* Adjust line height as needed */
+  border-radius: 0.2rem; /* Adjust border radius as needed */
 }
 
 .delete-post-button {
@@ -786,12 +785,132 @@ a:focus-visible {
 }
 
 .text-success {
-    color: green; /* Change this color to your desired green shade */
-    font-weight: bold;
+  color: green; /* Change this color to your desired green shade */
+  font-weight: bold;
 }
 
+/* CSS for ViewTask Component */
 
-input[type=file] {
+.view-task {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.task {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.task:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.task-title {
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 10px;
+}
+
+.task-description {
+  color: #555;
+  font-size: 16px;
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.task-status {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #555;
+}
+
+.status-icon {
+  margin-right: 8px;
+  font-size: 18px;
+  color: #555;
+}
+
+.toggle-status-button {
+  margin-top: 10px;
+  background-color: #405de6;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.toggle-status-button:hover {
+  background-color: #3247b8;
+  transform: scale(1.05);
+}
+
+.task-details {
+  border: 1px solid #e1e1e1;
+  padding: 16px;
+  background-color: #f8f8f8;
+  border-radius: 8px;
+  margin-top: 16px;
+}
+
+.task-details p {
+  color: #555;
+  font-size: 16px;
+  margin: 8px 0;
+  line-height: 1.5;
+}
+
+/* Loading Spinner Styles */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+}
+
+/* Error Message Styles */
+.error-message {
+  color: #ff5555;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Add these styles to your CSS file or style block in your component */
+.delete-task-button {
+    background-color: #ff5757; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px; /* Adjust padding as needed */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    /* Optional: Add hover styles for better user feedback */
+    &:hover {
+        background-color: #e93e3e; /* Hover background color */
+        color: #fff; /* Hover text color */
+    }
+}
+
+input[type="file"] {
   width: 400px;
   max-width: 100%;
   color: #444;
@@ -801,7 +920,7 @@ input[type=file] {
   border: 1px solid #555;
 }
 
-input[type=file]::file-selector-button {
+input[type="file"]::file-selector-button {
   margin-right: 20px;
   border: none;
   background: #084cdf;
@@ -809,10 +928,10 @@ input[type=file]::file-selector-button {
   border-radius: 5px;
   color: #fff;
   cursor: pointer;
-  transition: background .2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 
-input[type=file]::file-selector-button:hover {
+input[type="file"]::file-selector-button:hover {
   background: #0d45a5;
 }
 
@@ -832,22 +951,22 @@ input[type=file]::file-selector-button:hover {
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .post-page-meta {
-        flex-direction: column; /* Stack elements vertically */
-        text-align: center; /* Center-align text */
-    }
+  .post-page-meta {
+    flex-direction: column; /* Stack elements vertically */
+    text-align: center; /* Center-align text */
+  }
 }
 
 /* Media query for smaller screens */
 @media (max-width: 768px) {
-    .button-container {
-        flex-direction: column; /* Stack buttons vertically */
-        align-items: center; /* Center align buttons */
-    }
+  .button-container {
+    flex-direction: column; /* Stack buttons vertically */
+    align-items: center; /* Center align buttons */
+  }
 
-    .btn {
-        margin: 5px 0; /* Add some vertical spacing between buttons */
-    }
+  .btn {
+    margin: 5px 0; /* Add some vertical spacing between buttons */
+  }
 }
 
 @media (max-width: 768px) {

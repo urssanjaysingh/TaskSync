@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { useCreatePostMutation } from "./postApiSlice";
 import PulseLoader from 'react-spinners/PulseLoader';
 import { useNavigate } from "react-router-dom";
+import useTitle from "../../hooks/useTitle";
 
 const CreatePostPage = () => {
+    useTitle('Create Post')
+    
     const [content, setContent] = useState("");
     const [createPost, { isLoading }] = useCreatePostMutation();
     const [localSuccessMessage, setLocalSuccessMessage] = useState("");
@@ -28,7 +31,7 @@ const CreatePostPage = () => {
 
                     // Navigate after another delay (e.g., 2 seconds)
                     setTimeout(() => {
-                        navigate(-1);
+                        navigate("/dash/post/all");
                     }, 1000); // Adjust the delay time as needed
                 }, 1000);
             })

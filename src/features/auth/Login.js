@@ -97,7 +97,7 @@ const Login = () => {
     return (
         <section className="public">
             <header>
-                <h1><span className="nowrap">FlexiBlog</span></h1>
+                <h1><span className="nowrap">TaskSync</span></h1>
             </header>
             <main className="public__main">
                 <div className="login" style={{ width: "400px" }}>
