@@ -729,7 +729,7 @@ a:focus-visible {
   background-color: #f5f5f5;
   border-radius: 5px;
   margin-top: 1px;
-  margin-bottom: 3px; /* Increase the margin for more space between comments */
+  margin-bottom: 5px; /* Increase the margin for more space between comments */
 }
 
 .comment-content {
