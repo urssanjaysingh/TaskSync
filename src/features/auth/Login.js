@@ -97,13 +97,12 @@ const Login = () => {
     return (
         <section className="public">
             <header>
-                <h1><span className="nowrap">TaskSync</span></h1>
+                <h1 className="dash-header__title"><span className="nowrap">TaskSync</span></h1>
                 <nav className="dash-header__nav">
-                    <Link to="/" className="btn btn-link">
+                    <Link to="/">
                         <FontAwesomeIcon icon={faHome} /> Home
                     </Link>
-                    <span className="space"></span>
-                    <Link to="/register" className="btn btn-link">
+                    <Link to="/register">
                         <FontAwesomeIcon icon={faUserPlus} /> Sign Up
                     </Link>
                 </nav>
