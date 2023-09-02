@@ -6,7 +6,7 @@ const Public = () => {
     const content = (
         <section className="home">
             <header className='home__header'>
-                <h1>Welcome to TaskSync!</h1>
+                <h2>Welcome to TaskSync!</h2>
             </header>
             <main className="home__main">
                 <p>Streamline your tasks and stay organized with TaskSync.</p>
