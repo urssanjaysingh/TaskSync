@@ -326,7 +326,7 @@ a:focus-visible {
 }
 
 .home__header {
-  font-size: 2.5rem; /* Increased font size for emphasis */
+  font-size: 2rem; /* Increased font size for emphasis */
   padding: 20px;
   text-align: center;
   color: #262626; /* Instagram's text color */
