@@ -43,8 +43,8 @@ const CreatePostPage = () => {
 
     return (
         <main className="dash__main">
-            <div className="create-post-form" style={{ width: "100%" }}>
-                <div className="form-container" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+            <div className="create-post-form">
+                <div className="form-container">
                     <h1 className="text-center" style={{ color: "black" }}>Create Post</h1>
                     <div className="mb-3">
                         <textarea

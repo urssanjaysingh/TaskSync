@@ -708,10 +708,6 @@ a:focus-visible {
   color: #333;
 }
 
-.create-post-form {
-  max-width: 100%;
-}
-
 .create-form-group {
   margin-bottom: 15px;
 }
