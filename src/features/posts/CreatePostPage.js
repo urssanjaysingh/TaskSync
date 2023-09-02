@@ -44,7 +44,7 @@ const CreatePostPage = () => {
     return (
         <main className="dash__main">
             <div className="create-post-form" style={{ width: "100%"}} >
-                <div className="form-container">
+                <div className="form-container" style={{ maxWidth: "100%" }}>
                     <h1 className="text-center" style={{ color: "black" }}>Create Post</h1>
                     <div className="mb-3">
                         <textarea
@@ -53,7 +53,7 @@ const CreatePostPage = () => {
                             onChange={(e) => setContent(e.target.value)}
                             placeholder="Write your post here"
                             rows={10}
-                            style={{ maxWidth: "100%" }}
+                            style={{ width: "100%", maxWidth: "100%" }}
                         />
                     </div>
                     {localSuccessMessage && (
