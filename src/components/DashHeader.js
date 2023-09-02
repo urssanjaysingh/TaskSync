@@ -17,7 +17,7 @@ const DashHeader = () => {
     }] = useSendLogoutMutation();
 
     useEffect(() => {
-        if (isSuccess) navigate('/');
+        if (isSuccess) navigate('/login');
     }, [isSuccess, navigate]);
 
     if (isLoading) return <PulseLoader color={"#405de6"} />;

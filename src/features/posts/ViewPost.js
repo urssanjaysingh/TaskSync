@@ -190,7 +190,7 @@ const ViewPost = () => {
                                         <p style={{ fontSize: "12px" }} className="comment-author">{comment.authorUsername}</p>
                                         <p style={{ fontSize: "12px" }} >{comment.content}</p>
                                     </div>
-                                    {comment.author === userId && ( // Check if the comment belongs to the user
+                                    {(comment.author === userId || post.author === userId) && ( // Check if the comment belongs to the user or if the post belongs to the user
                                         <FontAwesomeIcon
                                             icon={faTrash}
                                             className="delete-comment-button"
