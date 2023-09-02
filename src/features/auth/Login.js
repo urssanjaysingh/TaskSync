@@ -96,7 +96,7 @@ const Login = () => {
 
     return (
         <section className="public">
-            <header className="dash-header">
+            <header>
                 <div className="dash-header__container">
                     <h1 className="dash-header__title">TaskSync</h1>
                     <nav className="dash-header__nav">
@@ -109,7 +109,7 @@ const Login = () => {
                     </nav>
                 </div>
             </header>
-            <main>
+            <main className="public__main">
                 <div className="login" style={{ width: "400px" }}>
                     {success ? (
                         <div className="text-center">
