@@ -40,4 +40,4 @@ Explore the live TaskSync website by following the link below:
 
 Click the button above to access the live website and experience the power of TaskSync for your project management needs.
 
-TaskSync simplifies project collaboration and keeps your team in sync. Get started today and take control of your projects!
+TaskSync simplifies project collaboration and keeps your team in sync. Get started today and take control of your projects! :)
